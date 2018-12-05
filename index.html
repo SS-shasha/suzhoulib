@@ -146,7 +146,6 @@
               var sId = $(this).data("id"); //获取data-id的值
               window.location.hash = sId; //设置锚点
               loadInner(sId);
-			  $(".abc").hide();
           });
 
           function loadInner(sId) {
@@ -170,8 +169,13 @@
                       i = 3;
                       break;　　　　　　
               }
-              $("#content").load(pathn+"?t="+(new Date().getTime())); //加载相对应的内容
-			  
+		  
+              if(pathn == undefined){
+		    $(".abc").show();
+	      }else{
+		    $("#content").load(pathn+"?t="+(new Date().getTime())); //加载相对应的内容
+		    $(".abc").hide();
+	      }  
               $(".category li").eq(i).addClass("current").siblings().removeClass("current"); //当前列表高亮
           }
           var sId = window.location.hash;
