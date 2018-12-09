@@ -42,8 +42,12 @@ ul{
 .secLine>div:last-child{
 	margin-right:80px;
 	}
-.secLine div form{
+.secLine>div form{
 	margin-bottom:5px;
+	overflow:hidden;
+	}
+.secLine>div form input{
+	float:left;
 	}
 .newBooks{
 	display:flex;
